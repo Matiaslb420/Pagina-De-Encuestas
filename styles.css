@@ -6,13 +6,59 @@
 }
 
 body{
-    background-color: #F2f2f2;
+    background-color: #F1f1f1;
+    height: 1900px;
+    background-repeat: no-repeat;
+    background-size: 1980px 1200px;
 
 }
 
 header{
-    width: 1212px;
-    height: 250px;
+	display: block;
+    height: 120px;
     background-color: #232828;
     margin: 0 auto;
-    border-radius:20px;
+    justify-content: center;
+}
+
+.cabecera {
+	padding-top: 8px;
+	align-items: center;
+	
+}
+
+#logotipo {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+h1{
+	font-size: 60px;
+	font-family: 'Architects Daughter', cursive;
+	color: rgb(8,79,138);
+}
+
+img {
+	height: 100px;
+}
+
+nav {
+	float: right;
+	padding: 30px 20px;
+}
+
+nav ul{
+    list-style: none;
+    text-decoration: none;
+}
+nav ul li {
+	float: left;
+	font-size: 30px;
+	margin: 0px 20px;
+}
+
+nav ul li a {
+	font-family: "Secular One", sans-serif;
+	color: white;
+}
