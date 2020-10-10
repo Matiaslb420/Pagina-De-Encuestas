@@ -6,10 +6,9 @@
 }
 
 body{
+	display: block;
     background-color: #F1f1f1;
-    height: 1900px;
-    background-repeat: no-repeat;
-    background-size: 1980px 1200px;
+    height: 1000px;
 
 }
 
@@ -19,6 +18,8 @@ header{
     background-color: #232828;
     margin: 0 auto;
     justify-content: center;
+    margin-bottom: 20px;
+    box-shadow: 0px 10px 20px black;
 }
 
 .cabecera {
@@ -41,6 +42,7 @@ h1{
 
 img {
 	height: 100px;
+	border-radius: 20px;
 }
 
 nav {
@@ -61,4 +63,50 @@ nav ul li {
 nav ul li a {
 	font-family: "Secular One", sans-serif;
 	color: white;
+}
+
+p{
+	font-family: 'Merriweather', serif;
+	font-size: 20px;
+}
+
+.contenido {
+	/*border: 1px solid brown; */
+	display: flex;
+	width: 85%;
+	height: 800px;
+	padding-top: 50px;
+	margin: 0 auto;
+	align-content: center;
+}
+
+.contenido img{
+	display: block;
+	box-shadow: 10px 10px 10px gray;
+	height: 350px;
+}
+
+.introduccion {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 850px;
+	padding-left: 100px;
+	padding-top: 80px;
+}
+
+h2 {
+	font-size:40px;
+	font-family: cursive;
+}
+
+.introduccion p{
+	font-family: 'Architects Daughter', cursive;
+	font-size: 35px;
+	line-height: 35px;
+}
+
+footer {
+	height: 40px;
+	background-color: #232828;
 }
