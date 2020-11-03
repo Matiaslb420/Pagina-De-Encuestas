@@ -20,5 +20,6 @@ import inicio.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', inicio.views.inicio, name='inicio')
+    path('', inicio.views.inicio, name='inicio'),
+    path('encuesta_simple', inicio.views.crear_encuesta_rapida, name='encuesta_simple'),
 ]
