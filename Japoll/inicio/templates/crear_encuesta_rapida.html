@@ -7,16 +7,23 @@ Crear encuesta
 
 {% block content %}
 <div class="contenido">
-	<form action="" method="POST">
+	<form action="{% url 'guardar' %}" method="POST">
+		{% csrf_token %}
 		<label for="title">Titulo</label>
-		<input type="text" name="title" placeholder="Introduzca el titulo">
-		<ol id=>
+		<input type="text" name="title" placeholder="Introduzca el titulo" maxlength="40" minlength="1">
+		<ol type="A" id="agregar_textarea">
 			<li>
-				textarea
+				<input type="text" name="respuesta1" placeholder="Respuesta" maxlength="40" minlength="1">
 			</li>
-			
+			<li>
+				<input type="text" name="respuesta2" placeholder="Respuesta" maxlength="40" minlength="1">
+			</li>						
 		</ol>
+	<input type="submit" value="Crear"/>
 		
 	</form>
-</div>>
+	<input id= "añadir" type="button" value="+" onclick="add()"/>
+	<input id= "quitar" type="button" value="-" onclick="remove()"/>
+</div>
+<script type="text/javascript" src="{% static 'javascript/agregar_textarea.js' %}"></script>
 {% endblock %}

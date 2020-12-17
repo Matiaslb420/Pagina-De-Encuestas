@@ -105,6 +105,27 @@ h2 {
 	line-height: 35px;
 }
 
+#añadir{
+	float: left;
+	width: 60px;
+	height: 60px;
+	font-size: 50px;
+	background: #60EE60;
+	color: #f1f1f1;
+	border-radius: 10px;
+}
+
+#quitar{
+	float: left;
+	width: 60px;
+	height: 60px;
+	font-size: 50px;
+	background: #ff3b3b;
+	color: #f1f1f1;
+	border-radius: 10px;
+}
+
+
 footer {
 	height: 40px;
 	background-color: #232828;
