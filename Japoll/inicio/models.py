@@ -17,3 +17,20 @@ class Encuesta(models.Model):
     autor = models.CharField(max_length=25)
     fecha_creacion = models.DateTimeField(auto_now_add=True)
     abierto = models.BooleanField()
+
+class Puntajes(models.Model):
+    clave = models.OneToOneField(
+        Encuesta,
+        on_delete=models.CASCADE,
+        primary_key=True,
+        )
+    votos_1 = models.PositiveIntegerField()
+    votos_2 = models.PositiveIntegerField()
+    votos_3 = models.PositiveIntegerField()
+    votos_4 = models.PositiveIntegerField()
+    votos_5 = models.PositiveIntegerField()
+    votos_6 = models.PositiveIntegerField()
+    votos_7 = models.PositiveIntegerField()
+    votos_8 = models.PositiveIntegerField()
+    votos_9 = models.PositiveIntegerField()
+    votos_10 = models.PositiveIntegerField()
