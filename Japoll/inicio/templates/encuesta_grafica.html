@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+Japoll | {{titulo}}
+{% endblock %}
+
+{% block content %}
+
+<h2> {{titulo}} </h2>
+	{% if respuesta.0 %}
+		
+		<li> {{ respuesta.0 }} : {{ puntaje.0 }} votos </li>
+	{% endif %}
+	{% if respuesta.1 %}
+		<li> {{ respuesta.1 }} : {{ puntaje.1 }} votos </li>
+	{% endif %}
+	{% if respuesta.2 %}
+		<li> {{ respuesta.2 }} : {{ puntaje.2 }} votos </li>
+	{% endif %}
+	{% if respuesta.3 %}
+		<li> {{ respuesta.3 }} : {{ puntaje.3 }} votos </li>
+	{% endif %}
+	{% if respuesta.4 %}
+		<li> {{ respuesta.4 }} : {{ puntaje.4 }} votos </li>
+	{% endif %}
+	{% if respuesta.5 %}
+		<li> {{ respuesta.5 }} : {{ puntaje.5 }} votos </li>
+	{% endif %}
+	{% if respuesta.6 %}
+		<li> {{ respuesta.6 }} : {{ puntaje.6 }} votos </li>
+	{% endif %}
+	{% if respuesta.7 %}
+		<li> {{ respuesta.7 }} : {{ puntaje.7 }} votos </li>
+	{% endif %}
+	{% if respuesta.8 %}
+		<li> {{ respuesta.8 }} : {{ puntaje.8 }} votos </li>
+	{% endif %}
+	{% if respuesta.9 %}
+		<li> {{ respuesta.9 }} : {{ puntaje.9 }} votos </li>
+	{% endif %}
+{% endblock %}

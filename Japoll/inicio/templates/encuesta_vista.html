@@ -1,40 +1,77 @@
 {% extends 'layout.html' %}
-{% load static %}
+{%load static %}
 
 {% block title %}
-Japoll | {{titulo}}
+{{titulo}}
 {% endblock %}
 
 {% block content %}
-<h2> {{titulo}} </h2>
-	{% if respuesta.0 %}
-		<li> {{ respuesta.0 }} : {{ puntaje.0 }}  </li>
-	{% endif %}
-	{% if respuesta.1 %}
-		<li> {{ respuesta.1 }} : {{ puntaje.1 }}  </li>
-	{% endif %}
-	{% if respuesta.2 %}
-		<li> {{ respuesta.2 }} : {{ puntaje.2 }}  </li>
-	{% endif %}
-	{% if respuesta.3 %}
-		<li> {{ respuesta.3 }} : {{ puntaje.3 }}  </li>
-	{% endif %}
-	{% if respuesta.4 %}
-		<li> {{ respuesta.4 }} : {{ puntaje.4 }}  </li>
-	{% endif %}
-	{% if respuesta.5 %}
-		<li> {{ respuesta.5 }} : {{ puntaje.5 }}  </li>
-	{% endif %}
-	{% if respuesta.6 %}
-		<li> {{ respuesta.6 }} : {{ puntaje.6 }}  </li>
-	{% endif %}
-	{% if respuesta.7 %}
-		<li> {{ respuesta.7 }} : {{ puntaje.7 }}  </li>
-	{% endif %}
-	{% if respuesta.8 %}
-		<li> {{ respuesta.8 }} : {{ puntaje.8 }}  </li>
-	{% endif %}
-	{% if respuesta.9 %}
-		<li> {{ respuesta.9 }} : {{ puntaje.9 }}  </li>
-	{% endif %}
+<div class="content">
+	<form method="POST" action="{% url 'votar' %}">
+		{% csrf_token %}
+		<div id="respuestas-grafica">
+			{% if respuesta.0 %}
+			<div>
+				<input type="radio" name="respuesta" id="respuesta0" value="{{clave}}-0" required>
+				<label for="respuesta0"> {{respuesta.0}}</label>
+			</div>
+			{% endif %}
+			{% if respuesta.1 %}
+			<div>
+				<input type="radio" name="respuesta" id="respuesta1" value="{{clave}}-1" required>
+				<label for="respuesta1">{{respuesta.1}}</label>
+			</div>
+			{% endif %}
+			{% if respuesta.2 %}
+			<div>
+				<input type="radio" name="respuesta" id="respuesta2" value="{{clave}}-2" required>
+				<label for="respuesta2">{{respuesta.2}}</label>
+			</div>
+			{% endif %}
+			{% if respuesta.3 %}
+			<div>
+				<input type="radio" name="respuesta" id="respuesta3" value="{{clave}}-3" required>
+				<label for="respuesta3">{{respuesta.3}}</label>
+			</div>
+			{% endif %}
+			{% if respuesta.4 %}
+			<div>
+				<input type="radio" name="respuesta" id="respuesta4" value="{{clave}}-4" required>
+				<label for="respuesta4">{{respuesta.4}}</label>
+			</div>
+			{% endif %}
+			{% if respuesta.5 %}
+			<div>
+				<input type="radio" name="respuesta" id="respuesta5" value="{{clave}}-5" required>
+				<label for="respuesta5">{{respuesta.5}}</label>
+			</div>
+			{% endif %}
+			{% if respuesta.6 %}
+			<div>
+				<input type="radio" name="respuesta" id="respuesta6" value="{{clave}}-6" required>
+				<label for="respuesta6">{{respuesta.6}}</label>
+			</div>
+			{% endif %}
+			{% if respuesta.7 %}
+			<div>
+				<input type="radio" name="respuesta" id="respuesta7" value="{{clave}}-7" required>
+				<label for="respuesta7">{{respuesta.7}}</label>
+			</div>
+			{% endif %}
+			{% if respuesta.8 %}
+			<div>
+				<input type="radio" name="respuesta" id="respuesta8" value="{{clave}}-8" required>
+				<label for="respuesta8">{{respuesta.8}}</label>
+			</div>
+			{% endif %}
+			{% if respuesta.9 %}
+			<div>
+				<input type="radio" name="respuesta" id="respuesta9" value="{{clave}}-9" required>
+				<label for="respuesta9">{{respuesta.9}}</label>
+			</div>
+			{% endif %}
+			<input type="submit" value="Votar"/>
+		</div>
+	</form>
+</div>
 {% endblock %}

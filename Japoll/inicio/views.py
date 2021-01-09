@@ -1,6 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
-from inicio.models import Encuesta, Puntajes
-from random import choice
+from inicio.models import Encuesta, Puntajes, Votantes
 import clave
 
 
@@ -10,6 +9,7 @@ def inicio(request):
 def crear_encuesta_rapida(request):
 
     return render(request, 'crear_encuesta_rapida.html')
+
 #Falta hacer que verifique el campo del titulo y las respuestas
 def guardar_encuesta(request):
     if request.method == 'POST':
@@ -94,7 +94,8 @@ def ver_encuesta(request, id):
             votos.votos_8,
             votos.votos_9,
             votos.votos_10,
-            ]
+            ],
+        'clave': id,
         }
     )
 
@@ -106,3 +107,66 @@ def verificar_respuesta(ultima_respuesta, cantidad):
         respuesta = ''
     return respuesta
 
+def ver_grafica(request, id):
+    encuesta = Encuesta.objects.get(clave = id)
+    votos = Puntajes.objects.get(clave = id)
+    #agregar que pasa si está cerrada
+    if encuesta.abierto == False:
+        pass
+    return render(request, 'encuesta_grafica.html',{
+        'titulo': encuesta.titulo,
+        'respuesta':[
+            encuesta.res_1,
+            encuesta.res_2,
+            encuesta.res_3,
+            encuesta.res_4,
+            encuesta.res_5,
+            encuesta.res_6,
+            encuesta.res_7,
+            encuesta.res_8,
+            encuesta.res_9,
+            encuesta.res_10
+            ],
+        'puntaje':[
+            votos.votos_1,
+            votos.votos_2,
+            votos.votos_3,
+            votos.votos_4,
+            votos.votos_5,
+            votos.votos_6,
+            votos.votos_7,
+            votos.votos_8,
+            votos.votos_9,
+            votos.votos_10,
+            ],
+        }
+                  )
+def votar(request):
+    if request.method == 'POST':
+        id, opcion = request.POST['respuesta'].split('-')
+        voto = Puntajes.objects.get(clave = id)
+        if opcion == '0':
+            voto.votos_1 += 1
+        elif opcion == '1':
+            voto.votos_2 +=1
+        elif opcion == '2':
+            voto.votos_3 += 1
+        elif opcion == '3':
+            voto.votos_4 +=1
+        elif opcion == '4':
+            voto.votos_5 += 1
+        elif opcion == '5':
+            voto.votos_6 +=1
+        elif opcion == '6':
+            voto.votos_7 += 1
+        elif opcion == '7':
+            voto.votos_8 +=1
+        elif opcion == '8':
+            voto.votos_9 += 1
+        elif opcion == '9':
+            voto.votos_10 +=1
+        else:
+            print(opcion)
+            print(voto.res_0)
+        voto.save()
+        return redirect('grafica', id = id)

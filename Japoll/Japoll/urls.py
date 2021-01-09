@@ -24,4 +24,6 @@ urlpatterns = [
     path('encuesta_simple/', inicio.views.crear_encuesta_rapida, name='encuesta_simple'),
     path('guardar_encuesta/', inicio.views.guardar_encuesta, name='guardar'),
     path('encuesta/<str:id>/', inicio.views.ver_encuesta, name='visualizacion'),
+    path('encuesta/<str:id>/ver', inicio.views.ver_grafica, name= 'grafica'),
+    path('encuesta/votar', inicio.views.votar, name='votar'),
 ]

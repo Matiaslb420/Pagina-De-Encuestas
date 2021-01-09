@@ -34,3 +34,10 @@ class Puntajes(models.Model):
     votos_8 = models.PositiveIntegerField()
     votos_9 = models.PositiveIntegerField()
     votos_10 = models.PositiveIntegerField()
+
+class Votantes(models.Model):
+    id = models.AutoField(primary_key=True)
+    clave = models.ManyToManyField(Encuesta)
+    user = models.CharField(max_length = 25)
+    class Meta:
+        order_with_respect_to = 'clave'
