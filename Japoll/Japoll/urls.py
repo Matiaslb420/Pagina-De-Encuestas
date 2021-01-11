@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from django.config import settings
+from django.config.urls.static import static
 import inicio.views
 
 urlpatterns = [
@@ -26,4 +27,4 @@ urlpatterns = [
     path('encuesta/<str:id>/', inicio.views.ver_encuesta, name='visualizacion'),
     path('encuesta/<str:id>/ver', inicio.views.ver_grafica, name= 'grafica'),
     path('encuesta/votar', inicio.views.votar, name='votar'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
